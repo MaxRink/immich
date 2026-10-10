@@ -1,0 +1,32 @@
+name: SmartInfoService validation
+
+on:
+  push:
+    branches:
+      - 'validation/smart-info-32299'
+  workflow_dispatch:
+
+jobs:
+  smart-info-service:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.18.3
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile --ignore-scripts
+      - name: Build workspace SDK packages
+        run: |
+          pnpm --filter @immich/sdk build
+          pnpm --filter @immich/plugin-sdk build
+      - name: Run official SmartInfoService tests
+        working-directory: server
+        env:
+          DEBUG: vitest:*
+        run: pnpm exec vitest --config test/vitest.config.mjs run src/services/smart-info.service.spec.ts --reporter=verbose
