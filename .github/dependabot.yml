@@ -1,0 +1,171 @@
+version: 2
+updates:
+  - package-ecosystem: bundler
+    directories:
+    - /mobile/android
+    - /mobile/ios
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      routine-updates:
+        patterns:
+        - '*'
+        update-types:
+        - minor
+        - patch
+  - package-ecosystem: cargo
+    directory: /native
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      routine-updates:
+        patterns:
+        - '*'
+        update-types:
+        - minor
+        - patch
+  - package-ecosystem: devcontainers
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      routine-updates:
+        patterns:
+        - '*'
+        update-types:
+        - minor
+        - patch
+  - package-ecosystem: docker
+    directories:
+    - /machine-learning
+    - /packages/cli
+    - /packages/e2e-auth-server
+    - /server
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      routine-updates:
+        patterns:
+        - '*'
+        update-types:
+        - minor
+        - patch
+  - package-ecosystem: docker-compose
+    directories:
+    - /docker
+    - /e2e
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      routine-updates:
+        patterns:
+        - '*'
+        update-types:
+        - minor
+        - patch
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      routine-updates:
+        patterns:
+        - '*'
+        update-types:
+        - minor
+        - patch
+  - package-ecosystem: gitsubmodule
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      routine-updates:
+        patterns:
+        - '*'
+        update-types:
+        - minor
+        - patch
+  - package-ecosystem: gradle
+    directory: /mobile/android
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      routine-updates:
+        patterns:
+        - '*'
+        update-types:
+        - minor
+        - patch
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      routine-updates:
+        patterns:
+        - '*'
+        update-types:
+        - minor
+        - patch
+  - package-ecosystem: pub
+    directories:
+    - /mobile
+    - /mobile/packages/ui
+    - /native/native_core
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      routine-updates:
+        patterns:
+        - '*'
+        update-types:
+        - minor
+        - patch
+  - package-ecosystem: rust-toolchain
+    directory: /native/crates/native_core_ffi
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      routine-updates:
+        patterns:
+        - '*'
+        update-types:
+        - minor
+        - patch
+  - package-ecosystem: terraform
+    directories:
+    - /deployment/modules/cloudflare/docs
+    - /deployment/modules/cloudflare/docs-release
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      routine-updates:
+        patterns:
+        - '*'
+        update-types:
+        - minor
+        - patch
+  - package-ecosystem: uv
+    directory: /machine-learning
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      routine-updates:
+        patterns:
+        - '*'
+        update-types:
+        - minor
+        - patch
